@@ -22,6 +22,9 @@ firebase-blueprint.json
 Purpose: A blueprint mapping rules and initial database collection definitions for persistence.
 firestore.rules
 Purpose: Standard Firestore security rules that dictate backend permission levels (restricting read/write behavior to authorize customers and admins safely).
+
+
+
 📂 /src Directory (Core Logic & Routing)
 src/main.tsx
 Purpose: The entry point of the React application. It binds the React virtual DOM directly to the #root element in index.html.
@@ -35,6 +38,8 @@ src/initialMenu.ts
 Purpose: Contains the initial database seed collection of standard local dishes (Tiffins, Curries, Special Combos) to cleanly hydrate the food list on newly initialized databases.
 src/index.css
 Purpose: The root styling sheet. Configures Tailwind V4 directives and imports Google Fonts (Inter and Space Grotesk) to power modern typography and interfaces.
+
+
 📂 /src/components/* Directory (Modular UI Components)
 src/components/GlassHero.tsx
 Purpose: Controls the glassmorphic head banner of the website, displaying the restaurant's metadata, delivery availability toggle, phone details, and smooth loading animations.
