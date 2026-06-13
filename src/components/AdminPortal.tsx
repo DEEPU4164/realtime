@@ -137,7 +137,7 @@ export function AdminPortal({
             className="w-full flex items-center justify-center gap-2 py-4 px-6 border border-white/10 rounded-2xl bg-slate-900/40 backdrop-blur-md hover:border-[#E8A65C]/40 hover:bg-slate-900/60 text-slate-300 hover:text-white transition group cursor-pointer"
           >
             <Lock className="w-4 h-4 text-slate-500 group-hover:text-[#E8A65C] transition" />
-            <span className="text-sm font-semibold tracking-wide">Owner / Store Manager Administration</span>
+            <span className="text-sm font-semibold tracking-wide">Owner Administration</span>
           </button>
         )
       ) : (
@@ -152,7 +152,7 @@ export function AdminPortal({
                 <span className="text-xs font-mono uppercase tracking-widest text-[#E8A65C]">Active Workspace</span>
               </div>
               <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                Anupama Inn Store Manager Panel
+                Anupama Inn Manager Panel
               </h2>
             </div>
             
@@ -160,7 +160,7 @@ export function AdminPortal({
               onClick={onLogout}
               className="px-4 py-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/35 rounded-xl font-semibold text-xs flex items-center gap-1.5 transition self-start sm:self-center"
             >
-              <LogOut className="w-4 h-4" /> Exit Store Manager Mode
+              <LogOut className="w-4 h-4" /> Exit Manager Mode
             </button>
           </div>
 
@@ -169,7 +169,7 @@ export function AdminPortal({
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-base font-bold text-slate-200 flex items-center gap-2">
-                  <Sparkles className="w-4.5 h-4.5 text-[#E8A65C]" /> Manage Store Recipes
+                  <Sparkles className="w-4.5 h-4.5 text-[#E8A65C]" /> Manage Recipes
                 </h3>
                 
                 <button
@@ -191,7 +191,7 @@ export function AdminPortal({
                   
                   <div className="space-y-3">
                     <div>
-                      <label className="block text-xs text-slate-400 mb-1">Dish Title/Name</label>
+                      <label className="block text-xs text-slate-400 mb-1">Dish Name</label>
                       <input
                         type="text"
                         required
@@ -262,7 +262,7 @@ export function AdminPortal({
                 </motion.form>
               ) : (
                 <div className="bg-slate-950/20 p-4 rounded-2xl border border-white/5 text-center text-xs text-slate-400 font-light">
-                  Click any dish&apos;s inline pen icon inside the main menu list above to quickly adjust pricing, edit titles, or toggle the &quot;Sold Out&quot; state!
+                  Click any dish inline pen icon inside the main menu list above to quickly adjust pricing, edit titles
                 </div>
               )}
 
@@ -338,7 +338,7 @@ export function AdminPortal({
                       className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-white/10 text-white placeholder-slate-650 text-xs focus:border-[#E8A65C] outline-none resize-none leading-relaxed"
                       value={profileAddress}
                       onChange={(e) => setProfileAddress(e.target.value)}
-                      placeholder="Physical store address..."
+                      placeholder="address"
                     />
                   </div>
 
@@ -450,8 +450,8 @@ export function AdminPortal({
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="space-y-1">
-                  <h3 className="text-lg font-extrabold text-white">Store Owner Area</h3>
-                  <p className="text-xs text-slate-400">Please authenticate to gain store write parameters.</p>
+                  <h3 className="text-lg font-extrabold text-white">Owner Area</h3>
+                  <p className="text-xs text-slate-400">Please authenticate to gain write parameters</p>
                 </div>
                 <button
                   onClick={() => setShowPortalModal(false)}
