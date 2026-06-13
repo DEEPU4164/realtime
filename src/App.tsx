@@ -39,9 +39,9 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState("");
   const [settings, setSettings] = useState<RestaurantSettings>({
     whatsappNumber: "919550454565",
-    businessEmail: "hotelanupamainn@gmail.com",
+    businessEmail: "anupamainnrestaruent@gmail.com",
     operatingHours: "12:00 AM – 4:00 PM & 6:30 PM – 10:30 PM",
-    restaurantAddress: "Hotel Anupama Inn, Opp. 3 Town Police Station, Waltair Main Rd, Chinna Waltair, Visakhapatnam, Andhra Pradesh 530003",
+    restaurantAddress: "Hotel Anupama Inn, Opp. 3 Town Police Station, Waltair Main Rd, Visakhapatnam, AP 530003",
     isAcceptingOrders: true,
   });
 
@@ -139,9 +139,9 @@ export default function App() {
         if (!docSnap.exists()) {
           const defaultSettings = {
             whatsappNumber: "919550454565",
-            businessEmail: "hotelanupamainn@gmail.com",
+            businessEmail: "anupamainnrestaruent@gmail.com",
             operatingHours: "12:00 AM – 4:00 PM & 6:30 PM – 10:30 PM",
-            restaurantAddress: "Hotel Anupama Inn, Opp. 3 Town Police Station, Waltair Main Rd, Chinna Waltair, Visakhapatnam, Andhra Pradesh 530003",
+            restaurantAddress: "Hotel Anupama Inn, Opp. 3 Town Police Station, Waltair Main Rd, Visakhapatnam, AP 530003",
             isAcceptingOrders: true,
           };
           try {
@@ -614,7 +614,7 @@ export default function App() {
                   <div className="w-8 h-[3px] bg-[#E2445C] mt-1.5 rounded-full" />
                 </div>
                 <p className="text-xs text-slate-400 font-light leading-relaxed">
-                  We serve authentic South Indian tiffins, slow-cooked dum biryani, fiery Chinese starters and refreshing shakes — cooked fresh every day by our family of chefs with recipes passed down for three generations.
+                  We serve authentic South Indian tiffins, slow-cooked dum biryani, fiery Chinese starters — cooked fresh everyday.
                 </p>
                 
                 {/* Visual Circle Badges f, target, G */}
