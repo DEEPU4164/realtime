@@ -76,14 +76,14 @@ export function CartDrawer({
 
     // Construct highly legible WhatsApp template string
     const lines = [
-      `🔥 *HOTEL ANUPAMA INN (ORDER ${orderId})* 🔥`,
+      ` HOTEL ANUPAMA INN (ORDER ${orderId}) `,
       `━━━━━━━━━━━━━━━━━━━━`,
-      `👤 *Customer Info:*`,
+      ` *Customer Info:*`,
       `  • Name: ${name}`,
       `  • Mobile: ${phone}`,
       `  • Address: ${address}`,
       `━━━━━━━━━━━━━━━━━━━━`,
-      `🍛 *Items Placed:*`,
+      ` *Items Placed:*`,
     ];
 
     cart.forEach((i, idx) => {
@@ -93,9 +93,9 @@ export function CartDrawer({
 
     lines.push(
       `━━━━━━━━━━━━━━━━━━━━`,
-      `💰 *Total Bill: ₹${subtotal}*`,
-      `⏱️ _Placed at: ${newOrder.timestamp}_`,
-      `Please confirm cooking time & delivery! Thank you.`
+      ` Total Bill: ₹${subtotal}`,
+      ` _Placed at: ${newOrder.timestamp}_`,
+      `Thank you.`
     );
 
     const message = lines.join("\n");
