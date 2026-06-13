@@ -452,16 +452,7 @@ export default function App() {
               <div className="w-10 h-10 rounded-xl bg-[#E8A65C]/15 flex items-center justify-center shrink-0">
                 <Utensils className="w-5 h-5 text-[#E8A65C]" />
               </div>
-              <div>
-                <h4 className="text-sm font-semibold text-white">Daily Tiffins Combo Discount</h4>
-                <p className="text-xs text-slate-400 font-light">Get special discounted combos on idlies, bondas, and pooris!</p>
-              </div>
-            </div>
-            <span className="text-[10px] font-bold uppercase tracking-widest bg-[#E8A65C] text-slate-950 px-2.5 py-1 rounded-lg">
-              SAVES 15%
-            </span>
-          </div>
-
+              
           {/* Search HUD & Vegetarian Toggle Bar */}
           <div className="mb-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-3 items-center">
             {/* Search Input Custom Frame */}
