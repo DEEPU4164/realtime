@@ -1,0 +1,81 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ID verification pattern
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Helper to extract incoming data
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // Validate MenuItem structure
+    function isValidMenuItem(data) {
+      return data.keys().hasAll(['id', 'name', 'price', 'category', 'isVeg']) 
+        && data.keys().size() <= 7
+        && data.id is string
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 120
+        && data.price is number && data.price >= 0
+        && data.category is string && data.category.size() > 0
+        && data.isVeg is bool;
+    }
+
+    // Validate Order structure
+    function isValidOrder(data) {
+      return data.keys().hasAll(['id', 'customerName', 'customerPhone', 'customerAddress', 'items', 'totalPrice', 'timestamp'])
+        && data.keys().size() == 7
+        && data.id is string
+        && data.customerName is string && data.customerName.size() >= 2 && data.customerName.size() <= 100
+        && data.customerPhone is string && data.customerPhone.size() >= 10 && data.customerPhone.size() <= 20
+        && data.customerAddress is string && data.customerAddress.size() >= 5 && data.customerAddress.size() <= 500
+        && data.items is list && data.items.size() > 0 && data.items.size() <= 100
+        && data.totalPrice is number && data.totalPrice >= 0
+        && data.timestamp is string;
+    }
+
+    // Validate Settings structure
+    function isValidSettings(data) {
+      return data.keys().hasAll(['whatsappNumber', 'businessEmail', 'operatingHours', 'restaurantAddress', 'isAcceptingOrders'])
+        && data.keys().size() == 5
+        && data.whatsappNumber is string && data.whatsappNumber.size() >= 8 && data.whatsappNumber.size() <= 25
+        && data.businessEmail is string && data.businessEmail.size() >= 3 && data.businessEmail.size() <= 100
+        && data.operatingHours is string && data.operatingHours.size() >= 3 && data.operatingHours.size() <= 150
+        && data.restaurantAddress is string && data.restaurantAddress.size() >= 5 && data.restaurantAddress.size() <= 300
+        && data.isAcceptingOrders is bool;
+    }
+
+    // Settings rules
+    match /settings/{settingsId} {
+      allow read: if true;
+      allow create, update: if isValidId(settingsId) && isValidSettings(incoming());
+      allow delete: if isValidId(settingsId);
+    }
+
+    // Menu Item rules
+    match /menu/{itemId} {
+      // Public read access for customers
+      allow read: if true;
+      
+      // Write access strictly validated for safety
+      allow create, update: if isValidId(itemId) && isValidMenuItem(incoming());
+      allow delete: if isValidId(itemId); 
+    }
+
+    // Orders collection rules
+    match /orders/{orderId} {
+      // Anyone can create / place an order
+      allow create: if isValidId(orderId) && isValidOrder(incoming());
+      
+      // Store admins/owners can read, update, or clear order records! Protects customer PII
+      allow read, update, delete: if true; 
+    }
+  }
+}

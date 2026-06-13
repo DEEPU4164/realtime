@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "MenuItem": {
+      "title": "MenuItem",
+      "description": "A food item served in Hotel Anupama Inn",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "isVeg": { "type": "boolean" },
+        "isSoldOut": { "type": "boolean" }
+      },
+      "required": ["id", "name", "price", "category", "isVeg"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "WhatsApp order record submitted by a customer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "customerAddress": { "type": "string" },
+        "items": { "type": "array" },
+        "totalPrice": { "type": "number" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "customerName", "customerPhone", "customerAddress", "items", "totalPrice", "timestamp"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Business settings for the restaurant profile",
+      "type": "object",
+      "properties": {
+        "whatsappNumber": { "type": "string" },
+        "businessEmail": { "type": "string" },
+        "operatingHours": { "type": "string" },
+        "restaurantAddress": { "type": "string" },
+        "isAcceptingOrders": { "type": "boolean" }
+      },
+      "required": ["whatsappNumber", "businessEmail", "operatingHours", "restaurantAddress", "isAcceptingOrders"]
+    }
+  },
+  "firestore": {
+    "/menu/{itemId}": {
+      "schema": "MenuItem",
+      "description": "Live food items catalog stored in database"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Real-time records of submitted orders"
+    },
+    "/settings/{settingsId}": {
+      "schema": "Settings",
+      "description": "Dynamic restaurant contact and business details"
+    }
+  }
+}

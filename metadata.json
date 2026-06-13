@@ -1,0 +1,6 @@
+{
+  "name": "Hotel Anupama Inn",
+  "description": "Authentic tiffins, Biryani, and South Indian family restaurant in Visakhapatnam. Order online via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
