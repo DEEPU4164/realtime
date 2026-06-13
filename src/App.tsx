@@ -404,7 +404,7 @@ export default function App() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-24 right-5 z-[400] w-14 h-14 rounded-full bg-gradient-to-tr from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition"
+          className="fixed bottom-24 right-5 z-[400] w-14 h-14 rounded-full bg-gradient-to-tr from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform"
           title="Direct Chat on WhatsApp"
         >
           <MessageSquare className="w-6 h-6 text-white shrink-0" />
@@ -452,7 +452,13 @@ export default function App() {
               <div className="w-10 h-10 rounded-xl bg-[#E8A65C]/15 flex items-center justify-center shrink-0">
                 <Utensils className="w-5 h-5 text-[#E8A65C]" />
               </div>
-              
+              <div>
+                <h3 className="text-sm font-bold text-white">Special Combo Offers</h3>
+                <p className="text-xs text-slate-400">Get up to 20% off on combo deals!</p>
+              </div>
+            </div>
+          </div>
+
           {/* Search HUD & Vegetarian Toggle Bar */}
           <div className="mb-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-3 items-center">
             {/* Search Input Custom Frame */}
@@ -493,7 +499,7 @@ export default function App() {
           </div>
 
           {/* Sticky Horizontal Categories Navigation Scroller */}
-          <div className="sticky top-[73px] z-[100] -mx-4 px-4 py-3 sm:-mx-6 sm:px-6 bg-[#05080c]/90 backdrop-blur-md border-b border-white/5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex gap-2">
+          <div className="sticky top-[73px] z-[100] -mx-4 px-4 py-3 sm:-mx-6 sm:px-6 bg-[#05080c]/90 backdrop-blur-md border-b border-white/5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
@@ -693,7 +699,7 @@ export default function App() {
               exit={{ opacity: 0, y: 50, x: "-50%" }}
               transition={{ type: "spring", stiffness: 220, damping: 20 }}
               onClick={() => setIsCartOpen(true)}
-              className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-lg z-[450] p-4 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-[#E8A65C]/45 shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition cursor-pointer flex items-center justify-between"
+              className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-lg z-[450] p-4 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-[#E8A65C]/45 shadow-2xl cursor-pointer hover:border-[#E8A65C]/60 transition"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#E8A65C] flex items-center justify-center text-slate-950 relative">
