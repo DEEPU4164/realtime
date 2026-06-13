@@ -17,8 +17,6 @@ const FOOD_SLIDES = [
     image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=1200&auto=format&fit=crop",
     caption: "Crispy Golden Ghee Masala Dosa",
   },
-  {
-   
 ];
 
 interface GlassHeroProps {
@@ -112,7 +110,7 @@ export function GlassHero({ settings }: GlassHeroProps) {
       {/* Content Overlay */}
       <div className="relative z-10 p-6 sm:p-8 pt-[140px] sm:pt-[180px] md:pt-[200px] flex flex-col justify-end">
         {/* Dynamic Caption */}
-        <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-[#E8A65C] mb-2 inline-flex items-center gap-1.5 bg-slate-950/50 px-3 py-1 rounded-full border border-white/5 w-fit">
+        <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-[#E8A65C] mb-2 inline-flex items-center gap-1.5 bg-slate-950/50 px-3 py-1 rounded-full border border-white/10">
           <Sparkles className="w-3.5 h-3.5" /> {FOOD_SLIDES[slideIndex].caption}
         </span>
 
@@ -122,7 +120,7 @@ export function GlassHero({ settings }: GlassHeroProps) {
               Hotel Anupama Inn
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-              Experience Vizag’s finest signature starters, hearty family meals, and an unforgettable dining atmosphere.
+              Experience Vizag's finest signature starters, hearty family meals, and an unforgettable dining atmosphere.
             </p>
           </div>
 
