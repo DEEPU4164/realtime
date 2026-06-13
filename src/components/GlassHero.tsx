@@ -11,20 +11,14 @@ import { RestaurantSettings } from "../types";
 const FOOD_SLIDES = [
   {
     image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1200&auto=format&fit=crop",
-    caption: "Aromatic Hyderabadi Dum Biryani",
+    caption: "Dum Biryani",
   },
   {
     image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?q=80&w=1200&auto=format&fit=crop",
     caption: "Crispy Golden Ghee Masala Dosa",
   },
   {
-    image: "https://images.unsplash.com/photo-1601050690597-df056fb4ce78?q=80&w=1200&auto=format&fit=crop",
-    caption: "Spicy Traditional Telugu Curries",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop",
-    caption: "Cozy Family Fine Dining Experience",
-  },
+   
 ];
 
 interface GlassHeroProps {
@@ -128,7 +122,7 @@ export function GlassHero({ settings }: GlassHeroProps) {
               Hotel Anupama Inn
             </h1>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-              Visakhapatnam&apos;s culinary gem. Serving delicious legendary South Indian tiffins, authentic Hyderabadi biryanis, spicy starters, family meals, and freshly brewed filter tea in a warm, pristine ambiance.
+              Experience Vizag’s finest signature starters, hearty family meals, and an unforgettable dining atmosphere.
             </p>
           </div>
 
@@ -164,7 +158,7 @@ export function GlassHero({ settings }: GlassHeroProps) {
             <MapPin className="w-4 h-4 text-[#E8A65C] shrink-0" />
             <div>
               <p className="text-xs font-semibold text-white">Location</p>
-              <p className="text-[10px] text-slate-400 font-light truncate">{settings?.restaurantAddress || "Waltair Main Rd, Chinna Waltair"}</p>
+              <p className="text-[10px] text-slate-400 font-light truncate">{settings?.restaurantAddress || "Waltair Main Rd"}</p>
             </div>
           </div>
 
